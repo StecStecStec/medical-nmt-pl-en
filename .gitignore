@@ -8,6 +8,8 @@ eval-tmp/
 
 # === Data (large + medical, keep out of the repo) ===
 *.csv
+# small curated demo sample (committed on purpose)
+!data_sample.csv
 *.spm
 
 # === Python ===

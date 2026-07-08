@@ -144,6 +144,16 @@ python run_eval.py
 Loads the base and fine-tuned models, scores the test set (BLEU + chrF), and
 writes `results.json`.
 
+**No private data?** A small curated `data_sample.csv` (20 medical PL→EN pairs)
+is committed so the pipeline runs out of the box:
+
+```bash
+python run_eval.py --test_csv data_sample.csv --out sample_results.json
+```
+
+This is a smoke test, not a benchmark — the headline numbers above come from
+the full 10k-row test set.
+
 ### 4. Translate a sentence
 
 ```bash
@@ -162,6 +172,7 @@ python inference.py --sentence "Pacjent zgłasza silne bóle głowy i nudności.
 | `inference.py` | Load fine-tuned model and translate a Polish sentence |
 | `data_utils.py` | Shared dataset loading / preprocessing |
 | `metrics_utils.py` | BLEU + chrF computation and JSON persistence |
+| `data_sample.csv` | 20-row curated demo sample (only data committed) |
 | `shortendata.py` | Build the `_short` working splits |
 | `check_file_length.py` | Row-count utility |
 | `datatesting.py` | **DEPRECATED** (early training script; exits immediately) |
