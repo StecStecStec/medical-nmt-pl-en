@@ -91,6 +91,12 @@ so `load_best_model_at_end` correctly kept the epoch-2 checkpoint. These exact
 numbers are stored in `training_log.json`. (chrF is `null` there because the
 recorded run predates the chrF addition; a fresh training run populates it.)
 
+![Training loss and validation BLEU per epoch](assets/training_curve.png)
+
+*Train loss keeps dropping while validation BLEU peaks at epoch 2 then dips —
+`load_best_model_at_end` keeps the epoch-2 checkpoint. Regenerate with
+`python make_training_plot.py`.*
+
 ### Test set — baseline vs fine-tuned (BLEU + chrF)
 
 Real numbers on `data_testing_short.csv` (10,000 rows), written to
@@ -177,6 +183,7 @@ python inference.py --sentence "Pacjent zgłasza silne bóle głowy i nudności.
 | `data_utils.py` | Shared dataset loading / preprocessing |
 | `metrics_utils.py` | BLEU + chrF computation and JSON persistence |
 | `make_results_plot.py` | Render `assets/results.png` from `results.json` |
+| `make_training_plot.py` | Render `assets/training_curve.png` from `training_log.json` |
 | `data_sample.csv` | 20-row curated demo sample (only data committed) |
 | `shortendata.py` | Build the `_short` working splits |
 | `check_file_length.py` | Row-count utility |
