@@ -74,6 +74,10 @@ Best checkpoint is saved to `./finetuned-marian-best`.
 
 ## Results
 
+![Baseline vs fine-tuned test-set BLEU and chrF](assets/results.png)
+
+*Regenerate with `python make_results_plot.py` (reads `results.json`).*
+
 ### Validation (per epoch — real numbers from the training run)
 
 | Epoch | Mean train loss ↓ | Eval loss ↓ | BLEU ↑ |
@@ -172,6 +176,7 @@ python inference.py --sentence "Pacjent zgłasza silne bóle głowy i nudności.
 | `inference.py` | Load fine-tuned model and translate a Polish sentence |
 | `data_utils.py` | Shared dataset loading / preprocessing |
 | `metrics_utils.py` | BLEU + chrF computation and JSON persistence |
+| `make_results_plot.py` | Render `assets/results.png` from `results.json` |
 | `data_sample.csv` | 20-row curated demo sample (only data committed) |
 | `shortendata.py` | Build the `_short` working splits |
 | `check_file_length.py` | Row-count utility |
