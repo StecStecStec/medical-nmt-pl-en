@@ -1,0 +1,21 @@
+{
+  "model": {
+    "base_model": "Helsinki-NLP/opus-mt-pl-en",
+    "finetuned_dir": "./finetuned-marian-best",
+    "task": "medical PL->EN translation",
+    "test_set": "data_testing_short.csv"
+  },
+  "baseline": {
+    "bleu": 0.3870933329131805,
+    "chrf": 66.8852699733579
+  },
+  "finetuned": {
+    "bleu": 0.4601677826949594,
+    "chrf": 68.46392957270892
+  },
+  "delta": {
+    "bleu": 0.0730744497817789,
+    "chrf": 1.5786595993510275
+  },
+  "notes": "BLEU in [0,1]; chrF in [0,100] (sacreBLEU CHRF)."
+}

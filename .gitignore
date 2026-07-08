@@ -1,0 +1,29 @@
+# === Model weights / training artifacts (too large for GitHub, >100MB) ===
+finetuned-marian/
+finetuned-marian-best/
+eval-tmp/
+*.safetensors
+*.pt
+*.bin
+
+# === Data (large + medical, keep out of the repo) ===
+*.csv
+*.spm
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# === Env / IDE / OS ===
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# === Run logs ===
+run_eval.out
+*.log

@@ -1,0 +1,21 @@
+# Medical NMT fine-tuning — pinned dependencies
+# Python 3.10/3.11 recommended.
+#
+# torch: install a CUDA build to reproduce the fp16 GPU training run, e.g.
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# The pin below is the CPU/default wheel; swap the index URL for GPU.
+# (The original experiment ran on a torch 2.9.0.dev cu129 nightly; 2.6.0 is a
+#  stable reproducibility target. Any torch >=2.2 with matching CUDA works.)
+#
+# If TensorFlow + Keras 3 are also installed in your environment, Transformers
+# may fail to import its Trainer. Either run with USE_TF=0 set, or
+# `pip install tf-keras`. This project only needs the PyTorch backend.
+
+torch==2.6.0
+transformers==4.51.3
+datasets==3.5.0
+evaluate==0.4.3
+sacrebleu==2.5.1        # backend for BLEU + chrF
+sentencepiece==0.2.0    # required by MarianTokenizer
+numpy==1.26.4
+pandas==2.2.3           # CSV loading in data_utils.py
